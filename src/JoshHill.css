@@ -1,107 +1,20 @@
 .content {
 	margin-right: 10rem;
-	width: 21rem;
-	height: 29rem;
+	width: calc(var(--letter-width)*4 + 1rem);
+	height: calc(var(--letter-height)*4 + 1rem);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-@keyframes permNameEntranceTop {
-	0% {
-		opacity: 0;
-		scale: 0.1;
-	}
-	100% {
-		opacity: 1;
-		scale: 1;
-	}
-}
-
-@keyframes permNameEntranceBottomH {
-	0% {
-		opacity: 0;
-		scale: 0.1;
-		transform: translate(0,0);
-	}
-	75% {
-		opacity: 1;
-		scale: 1;
-		transform: translate(0,0);
-	}
-	100% {
-		opacity: 1;
-		scale: 1;
-		transform: translate(2rem,-14.6rem);
-	}
-}
-
-@keyframes permNameEntranceBottomI {
-	0% {
-		opacity: 0;
-		scale: 0.1;
-		transform: translate(0,0);
-	}
-	75% {
-		opacity: 1;
-		scale: 1;
-		transform: translate(0,0);
-	}
-	100% {
-		opacity: 1;
-		scale: 1;
-		transform: translate(1.2rem,-14.6rem);
-	}
-}
-
-@keyframes permNameEntranceBottomL {
-	0% {
-		opacity: 0;
-		scale: 0.1;
-		transform: translate(0,0);
-	}
-	75% {
-		opacity: 1;
-		scale: 1;
-		transform: translate(0,0);
-	}
-	100% {
-		opacity: 1;
-		scale: 1;
-		transform: translate(-0.2rem,-14.6rem);
-	}
-}
-
-@keyframes tempNameEntrance {
-	0% {
-		opacity: 0;
-		scale: 0.1;
-	}
-	50% {
-		opacity: 1;
-		scale: 1;
-	}
-	100% {
-		opacity: 0;
-		scale: 0.1;
-	}
-}
-
-@keyframes blurbAnimation {
-	0% {
-		opacity: 0;
-		scale: 0.1;
-	}
-	100% {
-		opacity: 1;
-		scale: 1;
-	}
-}
-
 .JoshHill {
 	--stagger-delay: 150ms;
+	--letter-size: 9rem;
+	--letter-height: 7rem;
+	--letter-width: 5rem;
+	--gap-size: 0.3rem;
 	display: grid;
-	gap: 0.3rem;
+	gap: var(--gap-size);
 
 	grid-template-areas:
 		'a b c d'
@@ -109,11 +22,23 @@
 		'k x x f'
 		'j i h g';
 
-	grid-template-rows: repeat(4, 7rem);
-	grid-template-columns: repeat(4, 5rem);
+	grid-template-rows: repeat(4, var(--letter-height));
+	grid-template-columns: repeat(4, var(--letter-width));
 	justify-content: center;
 	text-align: center;
 	position: relative;
+}
+
+@media (max-width: 1240px) {
+  .content {
+  	margin-left: 5rem;
+  }
+
+  .JoshHill {
+	--letter-size: 7rem;
+	--letter-height: 6rem;
+	--letter-width: 4rem;
+  }
 }
 
 .JoshHill:after {
@@ -122,6 +47,7 @@
 	z-index: 1;
 	bottom: 9.5rem;
 	right: 0;
+	left: 0;
 	height: 3rem;
 	width: auto;
 	color: white;
@@ -144,7 +70,7 @@
 span {
 	color: var(--primary-color);
 	font-family: "ArchivoNarrowBold";
-	font-size: 9rem;
+	font-size: var(--letter-size);
 	cursor: default;
 }
 
@@ -186,7 +112,7 @@ span {
 }
 .JoshHill > .Letter:nth-child(7) {
 	grid-area: g;
-	animation: permNameEntranceBottomL 2s ease-out;
+	animation: permNameEntranceBottomL2 2s ease-out;
 	animation-delay: calc(7 * var(--stagger-delay));
 	animation-fill-mode: forwards;
 }
@@ -219,4 +145,113 @@ span {
 	animation: tempNameEntrance 2s ease-out;
 	animation-delay: calc(2 * var(--stagger-delay));
 	animation-fill-mode: forwards;
+}
+
+@keyframes permNameEntranceTop {
+	0% {
+		opacity: 0;
+		scale: 0.1;
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+@keyframes permNameEntranceBottomH {
+	0% {
+		opacity: 0;
+		scale: 0.1;
+		transform: translate(0,0);
+	}
+	75% {
+		opacity: 1;
+		scale: 1;
+		transform: translate(0,0);
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+		transform: translate(2rem, calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+	}
+}
+
+@keyframes permNameEntranceBottomI {
+	0% {
+		opacity: 0;
+		scale: 0.1;
+		transform: translate(0,0);
+	}
+	75% {
+		opacity: 1;
+		scale: 1;
+		transform: translate(0,0);
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+		transform: translate(1.2rem, calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+	}
+}
+
+@keyframes permNameEntranceBottomL {
+	0% {
+		opacity: 0;
+		scale: 0.1;
+		transform: translate(0,0);
+	}
+	75% {
+		opacity: 1;
+		scale: 1;
+		transform: translate(0,0);
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+		transform: translate(-0.3rem, calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+	}
+}
+
+@keyframes permNameEntranceBottomL2 {
+	0% {
+		opacity: 0;
+		scale: 0.1;
+		transform: translate(0,0);
+	}
+	75% {
+		opacity: 1;
+		scale: 1;
+		transform: translate(0,0);
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+		transform: translate(-0.7rem, calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+	}
+}
+
+@keyframes tempNameEntrance {
+	0% {
+		opacity: 0;
+		scale: 0.1;
+	}
+	50% {
+		opacity: 1;
+		scale: 1;
+	}
+	100% {
+		opacity: 0;
+		scale: 0.1;
+	}
+}
+
+@keyframes blurbAnimation {
+	0% {
+		opacity: 0;
+		scale: 0.1;
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+	}
 }

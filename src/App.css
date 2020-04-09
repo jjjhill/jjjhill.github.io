@@ -10,6 +10,12 @@
   height: 100vh;
 }
 
+@media (max-width: 1240px) {
+  .App {
+    justify-content: flex-start
+  }
+}
+
 .background {
   background-image: url('../images/rock_wall.png');
   position: absolute;
