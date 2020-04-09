@@ -4,7 +4,7 @@ import './JoshHill.css'
 function JoshHill() {
   return (
     <div className="content">
-      <div className="JoshHill">
+      <div className="JoshHill Grid">
         <div className="Letter"><span>J</span></div>
         <div className="Letter"><span>O</span></div>
         <div className="Letter"><span>S</span></div>

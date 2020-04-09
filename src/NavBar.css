@@ -11,10 +11,11 @@
 	justify-content: center;
 }
 
-.Nav > * {
-	margin-top: 3rem;
-}
-
-.Nav > :first-child {
-	margin-top: 0rem;
+.NavItem {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 }

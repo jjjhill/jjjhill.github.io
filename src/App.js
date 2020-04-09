@@ -6,6 +6,7 @@ import JoshHill from './JoshHill.js'
 function App() {
   return (
     <div className="App">
+      <div className="background" />
       <NavBar />
       <JoshHill />
     </div>
