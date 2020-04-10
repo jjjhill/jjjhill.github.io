@@ -8,16 +8,11 @@
   justify-content: flex-end;
   align-items: center;
   height: 100vh;
-}
-
-@media (max-width: 1240px) {
-  .App {
-    justify-content: flex-start
-  }
+  overflow: hidden;
 }
 
 .background {
-  background-image: url('../images/rock_wall.png');
+  background-image: url('../images/rock_wall_cropped.jpg');
   position: absolute;
   background-size: cover;
   left: 0;
@@ -25,6 +20,17 @@
   top: 0;
   bottom: 0;
   z-index: -1;
+}
+
+@media (max-width: 770px) {
+  .App {
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .background {
+    background-image: url('../images/rock_wall_cropped_mobile.jpg');
+  }
 }
 
 @font-face {

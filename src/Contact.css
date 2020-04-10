@@ -1,0 +1,30 @@
+.Contact {
+  width: 40rem;
+  height: 30rem;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: var(--dark-gray);
+  box-shadow: 0 0 0 100vmax rgba(0,0,0,.7);
+}
+
+.blurb {
+  
+}
+
+.inputs {
+  display: grid;
+  grid-area:
+    'name email'
+    'subject subject'
+    'message message';
+
+  grid-template-rows: 2rem 2rem 6rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.inputs > input:nth-child(2) {
+
+}

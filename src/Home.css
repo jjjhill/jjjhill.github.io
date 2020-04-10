@@ -1,0 +1,10 @@
+.Home {
+  flex: 1;
+  padding-bottom: 4rem;
+}
+
+@media (max-width: 770px) {
+  .Home {
+    margin-left: 0rem;
+  }
+}

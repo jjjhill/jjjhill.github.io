@@ -5,18 +5,28 @@ import Home from './Home.js'
 import About from './About.js'
 import Skills from './Skills.js'
 import Contact from './Contact.js'
+import useComponentVisible from './useComponentVisible.js'
 
 function App() {
   const [page, setPage] = useState('home')
-  const [showContactDialog, setShowContactDialog] = useState(false)
+  const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
+
+  let pageSelect = (pageName) => {
+    if (pageName === 'contact') {
+      setIsComponentVisible(!isComponentVisible)
+      return
+    }
+    setPage(pageName)
+  }
+
   return (
     <div className="App">
       <div className="background" />
-      <NavBar onSelect={(pageName) => setPage(pageName)} onOpenContact={() => setShowContactDialog(true)}/>
+      <NavBar onSelect={pageSelect} selectedPage={page} />
       { page === 'home' && <Home /> }
       { page === 'about' && <About /> }
       { page === 'skills' && <Skills /> }
-      { showContactDialog && <Contact /> }
+      { isComponentVisible && <Contact ref={ref}/> }
     </div>
   )
 }

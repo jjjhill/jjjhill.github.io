@@ -1,10 +1,11 @@
 .content {
-	margin-right: 10rem;
+	padding-right: 15vw;
 	width: calc(var(--letter-width)*4 + 1rem);
 	height: calc(var(--letter-height)*4 + 1rem);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: flex-end;
 }
 
 .JoshHill {
@@ -13,6 +14,11 @@
 	--letter-height: 7rem;
 	--letter-width: 5rem;
 	--gap-size: 0.3rem;
+	--translate-H: 2.7rem;
+	--translate-I: 1.2rem;
+	--translate-L: -0.7rem;
+	--translate-L2: -1.2rem;
+	--blurb-translate: 9.5rem;
 	display: grid;
 	gap: var(--gap-size);
 
@@ -29,15 +35,21 @@
 	position: relative;
 }
 
-@media (max-width: 1240px) {
+@media screen and (max-width: 770px) {
   .content {
-  	margin-left: 5rem;
+  	padding-right: 0rem;
+		align-items: center;
   }
 
   .JoshHill {
-	--letter-size: 7rem;
-	--letter-height: 6rem;
-	--letter-width: 4rem;
+		--letter-size: 6rem;
+		--letter-height: 5rem;
+		--letter-width: 3rem;
+		--translate-H: 1.8rem;
+		--translate-I: 0.8rem;
+		--translate-L: -0.4rem;
+		--translate-L2: -0.7rem;
+		--blurb-translate: 6rem;
   }
 }
 
@@ -45,7 +57,7 @@
 	position: absolute;
 	opacity: 0;
 	z-index: 1;
-	bottom: 9.5rem;
+	bottom: var(--blurb-translate);
 	right: 0;
 	left: 0;
 	height: 3rem;
@@ -53,7 +65,7 @@
 	color: white;
 	font-family: "ArchivoNarrowBold";
 	font-size: 2rem;
-	content:'Full Stack Web Application Developer';
+	content:'Full Stack Developer';
 
 	animation: blurbAnimation 300ms ease-out;
 	animation-fill-mode: forwards;
@@ -172,7 +184,7 @@ span {
 	100% {
 		opacity: 1;
 		scale: 1;
-		transform: translate(2rem, calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+		transform: translate(var(--translate-H), calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
 	}
 }
 
@@ -190,7 +202,7 @@ span {
 	100% {
 		opacity: 1;
 		scale: 1;
-		transform: translate(1.2rem, calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+		transform: translate(var(--translate-I), calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
 	}
 }
 
@@ -208,7 +220,7 @@ span {
 	100% {
 		opacity: 1;
 		scale: 1;
-		transform: translate(-0.3rem, calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+		transform: translate(var(--translate-L), calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
 	}
 }
 
@@ -226,7 +238,7 @@ span {
 	100% {
 		opacity: 1;
 		scale: 1;
-		transform: translate(-0.7rem, calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+		transform: translate(var(--translate-L2), calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
 	}
 }
 

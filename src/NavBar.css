@@ -1,21 +1,103 @@
-.Nav {
-	background-color: var(--dark-gray);
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 4rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.Icon {
+  position: relative;
 }
 
-.Nav > * {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 1.5rem;
-	padding-bottom: 1.5rem;
+.Icon:before {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--dark-gray);
+  opacity: 0;
+  transition: all 300ms ease-out;
+}
+
+.Icon:hover:before {
+  opacity: 1;
+  transition: all 300ms ease-out;
+}
+
+.Icon:after {
+  content: '';
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color);
+  background-color: rgba(0,0,0,0);
+  opacity: 0;
+  transition: all 300ms ease-out;
+}
+
+.Icon:hover:after {
+  opacity: 1;
+  transition: all 300ms ease-out;
+}
+
+.HomeIcon:after {
+  content: 'Home';
+}
+
+.AboutIcon:after {
+  content: 'About';
+}
+
+.SkillsIcon:after {
+  content: 'Skills';
+}
+
+.ContactIcon:after {
+  content: 'Contact';
+}
+
+@media (min-width: 771px) {
+  .Nav {
+    background-color: var(--dark-gray);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Nav > * {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 770px) {
+  .Nav {
+    background-color: var(--dark-gray);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Nav > * {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
