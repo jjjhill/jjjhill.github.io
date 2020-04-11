@@ -1,24 +1,26 @@
 .content {
-	padding-right: 15vw;
+	--letter-height: 7rem;
+	--letter-width: 5rem;
+	--blurb-translate: 10.5rem;
+
 	width: calc(var(--letter-width)*4 + 1rem);
 	height: calc(var(--letter-height)*4 + 1rem);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-end;
+	position: relative;
 }
 
 .JoshHill {
 	--stagger-delay: 150ms;
 	--letter-size: 9rem;
-	--letter-height: 7rem;
-	--letter-width: 5rem;
 	--gap-size: 0.3rem;
 	--translate-H: 2.7rem;
 	--translate-I: 1.2rem;
 	--translate-L: -0.7rem;
 	--translate-L2: -1.2rem;
-	--blurb-translate: 9.5rem;
+
 	display: grid;
 	gap: var(--gap-size);
 
@@ -32,13 +34,37 @@
 	grid-template-columns: repeat(4, var(--letter-width));
 	justify-content: center;
 	text-align: center;
-	position: relative;
+}
+
+.content:after {
+	position: absolute;
+	opacity: 0;
+	z-index: 1;
+	bottom: var(--blurb-translate);
+	height: 3rem;
+	color: white;
+	font-family: "ArchivoNarrowBold";
+	font-size: 2rem;
+	content:'Full Stack Developer';
+	transform: translateX(-1.8rem);
+
+	animation: blurbAnimation 300ms ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 2.3s;
 }
 
 @media screen and (max-width: 770px) {
   .content {
+		--blurb-translate: 7.5rem;
+
   	padding-right: 0rem;
 		align-items: center;
+		flex: 1;
+		height: auto;
+  }
+
+  .content:after {
+		transform: translateX(0);
   }
 
   .JoshHill {
@@ -49,27 +75,7 @@
 		--translate-I: 0.8rem;
 		--translate-L: -0.4rem;
 		--translate-L2: -0.7rem;
-		--blurb-translate: 6rem;
   }
-}
-
-.JoshHill:after {
-	position: absolute;
-	opacity: 0;
-	z-index: 1;
-	bottom: var(--blurb-translate);
-	right: 0;
-	left: 0;
-	height: 3rem;
-	width: auto;
-	color: white;
-	font-family: "ArchivoNarrowBold";
-	font-size: 2rem;
-	content:'Full Stack Developer';
-
-	animation: blurbAnimation 300ms ease-out;
-	animation-fill-mode: forwards;
-	animation-delay: 2.3s;
 }
 
 .Letter {
