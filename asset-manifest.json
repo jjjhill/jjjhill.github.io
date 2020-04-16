@@ -1,9 +1,20 @@
 {
-  "main.css": "static/css/main.80dda3b5.css",
-  "main.css.map": "static/css/main.80dda3b5.css.map",
-  "main.js": "static/js/main.4b4ecfd1.js",
-  "main.js.map": "static/js/main.4b4ecfd1.js.map",
+  "main.css": "static/css/main.d1460089.css",
+  "main.css.map": "static/css/main.d1460089.css.map",
+  "main.js": "static/js/main.e72b2439.js",
+  "main.js.map": "static/js/main.e72b2439.js.map",
   "static/media/archivonarrow-bold-webfont.woff": "static/media/archivonarrow-bold-webfont.bbb4a8da.woff",
+  "static/media/aws2.png": "static/media/aws2.63d6ecd7.png",
+  "static/media/chrome.png": "static/media/chrome.b71492fe.png",
+  "static/media/css3.png": "static/media/css3.694bd32f.png",
+  "static/media/docker.png": "static/media/docker.7bcbbab5.png",
+  "static/media/flask.png": "static/media/flask.c2ac1bb4.png",
+  "static/media/html5.png": "static/media/html5.235957e5.png",
+  "static/media/js.png": "static/media/js.a935cbd9.png",
+  "static/media/node.png": "static/media/node.85458a67.png",
+  "static/media/react.png": "static/media/react.4ddd3f4d.png",
   "static/media/rock_wall_cropped.jpg": "static/media/rock_wall_cropped.2ae13469.jpg",
-  "static/media/rock_wall_cropped_mobile.jpg": "static/media/rock_wall_cropped_mobile.b60c682f.jpg"
+  "static/media/rock_wall_cropped_mobile.jpg": "static/media/rock_wall_cropped_mobile.b60c682f.jpg",
+  "static/media/rock_wall_tall.jpg": "static/media/rock_wall_tall.dcd0c789.jpg",
+  "static/media/vue.png": "static/media/vue.5a5cf3f6.png"
 }

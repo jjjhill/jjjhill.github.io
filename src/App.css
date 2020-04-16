@@ -1,25 +1,19 @@
-.App {
+* {
   --primary-color: #08fdd8;
   --medium-gray: #444;
   --dark-gray: #222;
+}
 
+.App {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  height: 100vh;
-  overflow: hidden;
-}
 
-.background {
-  background-image: url('../images/rock_wall_cropped.jpg');
-  position: absolute;
-  background-size: cover;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
+  max-height: min-content;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
 }
 
 @media (max-width: 770px) {
