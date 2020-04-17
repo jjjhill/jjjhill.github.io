@@ -32,7 +32,6 @@ function Skills() {
     'Flask': flaskLogo,
   }
 
-  // TODO - componentize the rotator container
   return (
     <div className="Skills">
       <h1>Frontend</h1>

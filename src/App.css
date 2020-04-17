@@ -9,20 +9,33 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-
-  max-height: min-content;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
+}
+
+.App:after {
+  content: '';
+  background-image: url('../images/rock_wall_cropped.jpg');
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
 }
 
 @media (max-width: 770px) {
   .App {
     justify-content: center;
     align-items: flex-end;
+    padding-bottom: 3.5rem;
+    box-sizing: border-box;
   }
 
-  .background {
+  .App:after {
     background-image: url('../images/rock_wall_cropped_mobile.jpg');
   }
 }

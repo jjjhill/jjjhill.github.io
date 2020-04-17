@@ -1,11 +1,10 @@
 .Contact {
-  width: 40rem;
-  height: 30rem;
   z-index: 2;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
+  left: 20vw;
+  right: 20vw;
+  top: 20vh;
+  bottom: 20vh;
   background-color: var(--dark-gray);
   box-shadow: 0 0 0 100vmax rgba(0,0,0,.7);
 }
@@ -16,15 +15,37 @@
 
 .inputs {
   display: grid;
-  grid-area:
+  grid-template-areas:
     'name email'
     'subject subject'
     'message message';
 
-  grid-template-rows: 2rem 2rem 6rem;
+  grid-template-rows: 1fr 1fr 5fr;
   grid-template-columns: 1fr 1fr;
 }
 
-.inputs > input:nth-child(2) {
+@media (max-width: 770px) {
+  .inputs {
+    grid-template-areas:
+      'name'
+      'email'
+      'subject'
+      'message';
 
+    grid-template-rows: 1fr 1fr 1fr 5fr;
+    grid-template-columns: 1fr;
+  }
+}
+
+.inputs > input:nth-child(1) {
+  grid-area: name;
+}
+.inputs > input:nth-child(2) {
+  grid-area: email;
+}
+.inputs > input:nth-child(3) {
+  grid-area: subject;
+}
+.inputs > input:nth-child(4) {
+  grid-area: message;
 }
