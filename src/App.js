@@ -8,7 +8,7 @@ import Contact from './Contact.js'
 import useComponentVisible from './useComponentVisible.js'
 
 function App() {
-  const [page, setPage] = useState('skills')
+  const [page, setPage] = useState('home')
   const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
   let pageSelect = (pageName) => {

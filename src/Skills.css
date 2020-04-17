@@ -1,6 +1,6 @@
 .Skills {
   flex: 1;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   padding-left: 25%;
   display: flex;
@@ -22,7 +22,6 @@ h1 {
   }
   .Skills {
     padding-left: 0%;
-    padding-top: 50%;
     justify-content: space-between;
   }
 }

@@ -5,7 +5,7 @@
 
 #container {
   width: 500px;
-  height: 150px;
+  height: 200px;
   perspective: 700px;
   margin-bottom: 50px;
 }
@@ -23,7 +23,7 @@
   background-color: var(--light-gray);
   opacity: 0.8;
   position: absolute;
-  top: 20px;
+  top: 50px;
   left: 200px;
   color: var(--primary-color);
   transform-origin: 50% 50% calc(var(--radius)/(-2));
@@ -46,9 +46,14 @@
   }
 
   #container {
+    height: 150px;
     position: relative;
     bottom: 5px;
     left: 0px;
     margin-bottom: 0px;
+  }
+
+  #rotator > div {
+    top: 20px;
   }
 }

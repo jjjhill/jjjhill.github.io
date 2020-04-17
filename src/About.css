@@ -14,3 +14,10 @@ p {
   font-size: 36px;
   color: white;
 }
+
+@media (max-width: 770px) {
+  .About {
+    padding-bottom: 3.5rem;
+    box-sizing: border-box;
+  }
+}

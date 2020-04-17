@@ -15,6 +15,26 @@ function Rotator(props) {
   let acceleration = 0.003
   let angle = 0
 
+  let mouseMoveEvent = (e) => {
+    var rect = e.target.getBoundingClientRect()
+    var x = e.clientX - rect.left
+
+    targetSpeed = (x-250)/250
+  }
+
+  let startTracking = () => {
+    container.current.addEventListener('mousemove', mouseMoveEvent)
+  }
+
+  let endTracking = () => {
+    if (targetSpeed <= 0) {
+      targetSpeed = -1*Math.abs(initialSpeed)
+    }
+    else {
+      targetSpeed = Math.abs(initialSpeed)
+    }
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (targetSpeed > speed) {
@@ -31,29 +51,16 @@ function Rotator(props) {
       rotator.current.style.transform = `rotate3d(0, 1, 0, ${angle}deg)`
     }, 1)
 
-    return () => clearInterval(interval)
+    container.current.addEventListener('mouseenter', startTracking)
+    container.current.addEventListener('mouseleave', endTracking)
+
+    return () => {
+      container.current.removeEventListener('mouseenter', startTracking)
+      container.current.removeEventListener('mouseleave', endTracking)
+      container.current.removeEventListener('mousemove', mouseMoveEvent)
+      clearInterval(interval)
+    }
   }, [])
-
-  let mouseMoveEvent = (e) => {
-    var rect = e.target.getBoundingClientRect()
-    var x = e.clientX - rect.left
-
-    targetSpeed = (x-250)/250
-  }
-
-  let startTracking = () => {
-    container.current.addEventListener('mousemove', mouseMoveEvent)
-  }
-
-  let endTracking = () => {
-    container.current.removeEventListener('mousemove', mouseMoveEvent)
-    if (targetSpeed <= 0) {
-      targetSpeed = -1*Math.abs(initialSpeed)
-    }
-    else {
-      targetSpeed = Math.abs(initialSpeed)
-    }
-  }
 
   let radius = width < 770 ? 220 : 300
   return (
