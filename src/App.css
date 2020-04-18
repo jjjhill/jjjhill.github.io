@@ -17,7 +17,7 @@
 
 .App:after {
   content: '';
-  background-image: url('../images/rock_wall_cropped.jpg');
+  background-image: url('../images/rock_wall_cropped_compressed.png');
   position: absolute;
   background-size: cover;
   top: 0;
@@ -29,6 +29,7 @@
 
 @media (max-width: 770px) {
   .App {
+    flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 3.5rem;
@@ -38,7 +39,7 @@
   }
 
   .App:after {
-    background-image: url('../images/rock_wall_cropped_mobile.jpg');
+    background-image: url('../images/rock_wall_cropped_mobile_compressed.png');
   }
 }
 

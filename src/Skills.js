@@ -11,7 +11,7 @@ import chromeLogo from '../images/chrome.png'
 
 import nodeLogo from '../images/node.png'
 import dockerLogo from '../images/docker.png'
-import awsLogo from '../images/aws2.png'
+import awsLogo from '../images/aws.png'
 import sqlLogo from '../images/sql.png'
 import flaskLogo from '../images/flask.png'
 

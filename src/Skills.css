@@ -22,6 +22,7 @@ h1 {
   }
   .Skills {
     padding-left: 0%;
-    justify-content: space-between;
+    padding-top: 40vh;
+    justify-content: space-around;
   }
 }
