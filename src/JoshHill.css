@@ -92,7 +92,7 @@
 }
 
 span {
-	color: var(--primary-color);
+	color: white;
 	font-family: "ArchivoNarrowBold";
 	font-size: var(--letter-size);
 	cursor: default;

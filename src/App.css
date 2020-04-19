@@ -13,6 +13,8 @@
   overflow-x: hidden;
   overflow-y: hidden;
   position: relative;
+  padding-left: 3.5rem;
+  box-sizing: border-box;
 }
 
 .App:after {
@@ -33,7 +35,7 @@
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 3.5rem;
-    box-sizing: border-box;
+    padding-left: 0px;
     height: 100vh;
     height: -webkit-fill-available;
   }
