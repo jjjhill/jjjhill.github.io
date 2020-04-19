@@ -8,7 +8,8 @@ import Contact from './Contact.js'
 import useComponentVisible from './useComponentVisible.js'
 
 function App() {
-  const [page, setPage] = useState('home')
+  let routes = ['home', 'about', 'skills', 'contact']
+  const [page, setPage] = useState('skills')
   const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
   let pageSelect = (pageName) => {
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <div>
-      <NavBar onSelect={pageSelect} selectedPage={page} />
+      <NavBar onSelect={pageSelect} selectedPage={page} routes={routes} />
       <div className="App">
         { page === 'home' && <Home /> }
         { page === 'about' && <About /> }

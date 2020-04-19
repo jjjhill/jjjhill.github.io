@@ -4,7 +4,7 @@ import { Home, Person, Build, Email } from '@material-ui/icons';
 
 export default function NavBar(props) {
   let [hoveredId, setHoveredId] = useState(-1)
-  let routes = ['home', 'about', 'skills', 'contact']
+  let { routes } = props
   let primaryColor = '#08fdd8'
 
   let navigateTo = (routeIndex) => {

@@ -14,16 +14,31 @@ function Rotator(props) {
   let speed = 0
   let acceleration = 0.003
   let angle = 0
+  let interval = null
+  let initialX = null
+  let initialAngle = null
+  let dragSpeedCalculator = null
+  let dragSpeed = 0
+  let prevDragAngle = 0
 
-  let mouseMoveEvent = (e) => {
-    var rect = e.target.getBoundingClientRect()
-    var x = e.clientX - rect.left
+  let updateSpeed = (e) => {
+    let rect = e.target.getBoundingClientRect()
+    let x = e.clientX - rect.left
 
     targetSpeed = (x-250)/250
   }
 
+  let updateAngle = (e) => {
+    let currX = e.clientX || e.changedTouches[0].clientX
+    let dist = currX - initialX
+    let incAngle = dist/2
+    let newAng = initialAngle + incAngle
+    angle = newAng
+    rotator.current.style.transform = `rotate3d(0, 1, 0, ${angle}deg)`
+  }
+
   let startTracking = () => {
-    container.current.addEventListener('mousemove', mouseMoveEvent)
+    container.current.addEventListener('mousemove', updateSpeed)
   }
 
   let endTracking = () => {
@@ -35,29 +50,66 @@ function Rotator(props) {
     }
   }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (targetSpeed > speed) {
-        speed+=acceleration
-      }
-      else if (targetSpeed < speed) {
-        speed-=acceleration
-      }
+  let startDragging = (e) => {
+    initialX = e.clientX || e.changedTouches[0].clientX
+    initialAngle = angle
+    clearInterval(interval)
+    container.current.removeEventListener('mousemove', updateSpeed)
+    container.current.removeEventListener('touchmove', updateSpeed)
+    document.addEventListener('mousemove', updateAngle)
+    document.addEventListener('touchmove', updateAngle)
+    dragSpeedCalculator = setInterval(() => {
+      dragSpeed = (angle-prevDragAngle)/20
+      prevDragAngle = angle
+    }, 20)
+    document.addEventListener('mouseup', endDragging)
+    document.addEventListener('touchend', endDragging)
+  }
 
-      let newAng = angle + speed
-      if (newAng < 0) newAng = 360
-      if (newAng > 360) newAng = 0
-      angle = newAng
-      rotator.current.style.transform = `rotate3d(0, 1, 0, ${angle}deg)`
-    }, 1)
+  let endDragging = () => {
+    speed = dragSpeed
+    targetSpeed = dragSpeed
+    clearInterval(dragSpeedCalculator)
+    interval = setInterval(rotateAuto, 1)
+    container.current.addEventListener('mousemove', updateSpeed)
+    container.current.addEventListener('touchmove', updateSpeed)
+    document.removeEventListener('mousemove', updateAngle)
+    document.removeEventListener('touchmove', updateAngle)
+    document.removeEventListener('mouseup', endDragging)
+    document.removeEventListener('touchend', endDragging)
+    endTracking()
+  }
+
+  let rotateAuto = () => {
+    if (targetSpeed > speed) {
+      speed += acceleration
+    }
+    else if (targetSpeed < speed) {
+      speed -= acceleration
+    }
+
+    let newAng = angle + speed
+    if (newAng < 0) newAng = 360
+    if (newAng > 360) newAng = 0
+    angle = newAng
+    rotator.current.style.transform = `rotate3d(0, 1, 0, ${angle}deg)`
+  }
+
+  useEffect(() => {
+    interval = setInterval(rotateAuto, 1)
 
     container.current.addEventListener('mouseenter', startTracking)
     container.current.addEventListener('mouseleave', endTracking)
+    container.current.addEventListener('mousedown', startDragging)
+    container.current.addEventListener('touchstart', startDragging)
 
     return () => {
       container.current.removeEventListener('mouseenter', startTracking)
       container.current.removeEventListener('mouseleave', endTracking)
-      container.current.removeEventListener('mousemove', mouseMoveEvent)
+      container.current.removeEventListener('mousemove', updateSpeed)
+      document.removeEventListener('mousemove', updateAngle)
+      container.current.removeEventListener('mousedown', startDragging)
+      container.current.removeEventListener('touchstart', startDragging)
       clearInterval(interval)
     }
   }, [])
