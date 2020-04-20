@@ -24,3 +24,375 @@
     box-sizing: border-box;
   }
 }
+
+.content {
+  --blurb-translate: 10.5rem;
+  --letter-height: 7rem;
+  --letter-width: 5.5rem;
+
+  width: calc(var(--letter-width)*4 + 1rem);
+  height: calc(var(--letter-height)*4 + 1rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.JoshHill {
+  --stagger-delay: 150ms;
+  --letter-size: 9rem;
+  --gap-size: 0.3rem;
+  --translate-H: 2.7rem;
+  --translate-I: 1.2rem;
+  --translate-L: -0.7rem;
+  --translate-L2: -1.2rem;
+
+  display: grid;
+  gap: var(--gap-size);
+
+  grid-template-areas:
+    'a b c d'
+    'l x x e'
+    'k x x f'
+    'j i h g';
+
+  grid-template-rows: repeat(4, var(--letter-height));
+  grid-template-columns: repeat(4, var(--letter-width));
+  justify-content: center;
+  text-align: center;
+}
+
+.content:after {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  bottom: var(--blurb-translate);
+  height: 3rem;
+  color: white;
+  font-family: "UbuntuMedium";
+  font-size: 2rem;
+  content:'Full Stack Developer';
+  transform: translateX(-1.6rem);
+
+  animation: blurbAnimation 300ms ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2.3s;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--letter-height));
+  transform: translateY(50%);
+
+  opacity: 0;
+  animation: blurbAnimation 300ms ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2.3s;
+}
+
+.socials > a {
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.socials img {
+  height: 40px;
+  width: 40px;
+  transform: scale(1);
+  transition: transform 100ms ease;
+}
+
+.socials img:active {
+  height: 40px;
+  width: 40px;
+  transform: scale(0.8);
+  transition: transform 100ms ease;
+}
+
+@media (max-width: 770px) {
+  .content {
+    --blurb-translate: 7rem;
+    --letter-height: 5rem;
+    --letter-width: 3.5rem;
+
+    padding-right: 0rem;
+    align-items: center;
+    flex: 1;
+    height: auto;
+  }
+
+  .content:after {
+    transform: translateX(0);
+    font-size: 1.5rem;
+  }
+
+  .JoshHill {
+    --letter-size: 6rem;
+    --translate-H: 1.8rem;
+    --translate-I: 1rem;
+    --translate-L: -0.4rem;
+    --translate-L2: -0.7rem;
+  }
+}
+
+.Letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.Letter span {
+  color: white;
+  font-family: "UbuntuMedium";
+  font-size: var(--letter-size);
+  cursor: default;
+}
+
+.JoshHill > .Letter:nth-child(1) {
+  grid-area: a;
+  animation: permNameEntranceTop 2s ease-out;
+  animation-delay: calc(1 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(2) {
+  grid-area: b;
+  animation: permNameEntranceTop 2s ease-out;
+  animation-delay: calc(2 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(3) {
+  grid-area: c;
+  animation: permNameEntranceTop 2s ease-out;
+  animation-delay: calc(3 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(4) {
+  grid-area: d;
+  animation: permNameEntranceTop 2s ease-out;
+  animation-delay: calc(4 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(5) {
+  grid-area: e;
+  animation: tempNameEntrance 2s ease-out;
+  animation-delay: calc(5 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(6) {
+  grid-area: f;
+  animation: tempNameEntrance 2s ease-out;
+  animation-delay: calc(6 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(7) {
+  grid-area: g;
+  animation: permNameEntranceBottomL2 2s ease-out;
+  animation-delay: calc(7 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(8) {
+  grid-area: h;
+  animation: permNameEntranceBottomL 2s ease-out;
+  animation-delay: calc(6 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(9) {
+  grid-area: i;
+  animation: permNameEntranceBottomI 2s ease-out;
+  animation-delay: calc(5 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(10) {
+  grid-area: j;
+  animation: permNameEntranceBottomH 2s ease-out;
+  animation-delay: calc(4 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(11) {
+  grid-area: k;
+  animation: tempNameEntrance 2s ease-out;
+  animation-delay: calc(3 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+.JoshHill > .Letter:nth-child(12) {
+  grid-area: l;
+  animation: tempNameEntrance 2s ease-out;
+  animation-delay: calc(2 * var(--stagger-delay));
+  animation-fill-mode: forwards;
+}
+
+.info {
+  --tooltip-scale: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: "UbuntuBold";
+  font-size: 1.5rem;
+  color: white;
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  cursor: default;
+}
+
+.info:after {
+  content: 'Everything on this site was made from scratch!';
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%) scale(var(--tooltip-scale));
+  height: 50px;
+  width: 150px;
+  background-color: var(--dark-gray);
+  color: white;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  transform-origin: right;
+  transition: transform 200ms ease;
+}
+
+.info:before {
+  content: '';
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%) scale(var(--tooltip-scale));
+  z-index: 5;
+  border: 15px solid transparent;
+  border-left-color: var(--dark-gray);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+.info:hover {
+  --tooltip-scale: 1;
+}
+
+@keyframes permNameEntranceTop {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes permNameEntranceBottomH {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+    transform: translate(0,0);
+  }
+  75% {
+    opacity: 1;
+    scale: 1;
+    transform: translate(0,0);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: translate(var(--translate-H), calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+  }
+}
+
+@keyframes permNameEntranceBottomI {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+    transform: translate(0,0);
+  }
+  75% {
+    opacity: 1;
+    scale: 1;
+    transform: translate(0,0);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: translate(var(--translate-I), calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+  }
+}
+
+@keyframes permNameEntranceBottomL {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+    transform: translate(0,0);
+  }
+  75% {
+    opacity: 1;
+    scale: 1;
+    transform: translate(0,0);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: translate(var(--translate-L), calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+  }
+}
+
+@keyframes permNameEntranceBottomL2 {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+    transform: translate(0,0);
+  }
+  75% {
+    opacity: 1;
+    scale: 1;
+    transform: translate(0,0);
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+    transform: translate(var(--translate-L2), calc(-1*(var(--letter-height)*2 + var(--gap-size)*2)));
+  }
+}
+
+@keyframes tempNameEntrance {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+  }
+  50% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.1;
+  }
+}
+
+@keyframes blurbAnimation {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}

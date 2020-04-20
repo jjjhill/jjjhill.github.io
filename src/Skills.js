@@ -34,9 +34,9 @@ function Skills() {
 
   return (
     <div className="Skills">
-      <h1>Frontend</h1>
+      <h1>Front End</h1>
       <Rotator skills={frontSkills} initialSpeed={-0.1} />
-      <h1>Backend</h1>
+      <h1>Back End</h1>
       <Rotator skills={backSkills} initialSpeed={0.1} />
     </div>
   )

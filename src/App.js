@@ -9,7 +9,7 @@ import useComponentVisible from './useComponentVisible.js'
 
 function App() {
   let routes = ['home', 'about', 'skills', 'contact']
-  const [page, setPage] = useState('skills')
+  const [page, setPage] = useState('home')
   const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
   let pageSelect = (pageName) => {

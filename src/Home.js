@@ -1,12 +1,32 @@
 import React from 'react'
 import './Home.css'
-import JoshHill from './JoshHill.js'
+import linkedInLogo from '../images/linked-in-white.png'
+import githubLogo from '../images/github-white.png'
 
 function Home() {
   return (
     <div className="Home">
-      <JoshHill />
-      {/* social media links */}
+	    <div className="content">
+	      <div className="JoshHill Grid">
+	        <div className="Letter"><span>J</span></div>
+	        <div className="Letter"><span>O</span></div>
+	        <div className="Letter"><span>S</span></div>
+	        <div className="Letter"><span>H</span></div>
+	        <div className="Letter"><span>I</span></div>
+	        <div className="Letter"><span>L</span></div>
+	        <div className="Letter"><span>L</span></div>
+	        <div className="Letter"><span>L</span></div>
+	        <div className="Letter"><span>I</span></div>
+	        <div className="Letter"><span>H</span></div>
+	        <div className="Letter"><span>S</span></div>
+	        <div className="Letter"><span>O</span></div>
+	      </div>
+	      <div className="socials">
+	        <a href="https://www.linkedin.com/in/josh-hill1/"><img src={linkedInLogo}/></a>
+	        <a href="https://github.com/jjjhill"><img src={githubLogo}/></a>
+	      </div>
+	    </div>
+      <div className="info">i</div>
     </div>
   )
 }

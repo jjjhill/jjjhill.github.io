@@ -46,6 +46,30 @@
 }
 
 @font-face {
-  font-family: "ArchivoNarrowBold";
-  src: url("../fonts/archivonarrow-bold-webfont.woff") format("woff")
+    font-family: 'ArchivoNarrowBold';
+    src: url('../fonts/archivonarrow-bold-webfont.woff2') format('woff2'),
+         url('../fonts/archivonarrow-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ArchivoNarrowMedium';
+    src: url('../fonts/ArchivoNarrow-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UbuntuBold';
+    src: url('../fonts/ubuntu/Ubuntu-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UbuntuMedium';
+    src: url('../fonts/ubuntu/Ubuntu-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
