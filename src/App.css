@@ -73,3 +73,17 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'UbuntuLight';
+    src: url('../fonts/ubuntu/Ubuntu-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UbuntuLightItalic';
+    src: url('../fonts/ubuntu/Ubuntu-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

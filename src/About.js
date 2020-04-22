@@ -1,13 +1,63 @@
 import React from 'react'
 import './About.css'
+import Timeline from './Timeline'
 
 function About() {
+  let colors = ["#f24f4f", "#ffff32", "#f79825", "#7cf4e6", "#ffa48e"]
+  let events = [
+    {
+      title: "RedIron Technologies",
+      summary: "Learned about software engineering and created test suites to improve code coverage",
+      startYear: 2016,
+      startMonth: 4,
+      endYear: 2016,
+      endMonth: 8,
+      technologies: "C#, SQL"
+    },
+    {
+      title: "OnCorp Direct",
+      summary: "Wrote C# code for an ASP.NET web application and designed MySQL stored procedures",
+      startYear: 2017,
+      startMonth: 0,
+      endYear: 2017,
+      endMonth: 4,
+      technologies: "HTML, CSS, JQuery, ASP.NET, MySQL"
+    },
+    {
+      title: "Royal Canadian Air Force",
+      summary: "Lead the engineering team in the implementation of a cross-platform forum application for members of the organization to post and discuss ideas",
+      startYear: 2017,
+      startMonth: 8,
+      endYear: 2017,
+      endMonth: 12,
+      technologies: "React Native, React, AWS, MySQL, Node.js"
+    },
+    {
+      title: "Miovision",
+      summary: "Spent the first 8 months developing features for a React/Redux application. The next 4 months was spent developing device-side features and APIs in Node.js",
+      startYear: 2018,
+      startMonth: 4,
+      endYear: 2019,
+      endMonth: 4,
+      technologies: "React, Redux, JSON, Ruby on Rails, Node.js, Docker"
+    },
+    {
+      title: "Vida Health",
+      summary: "Developed client-facing features for our iOS application while being a strong presence in agile development and product ownership.",
+      startYear: 2019,
+      startMonth: 8,
+      endYear: 2019,
+      endMonth: 12,
+      technologies: "iOS, Swift, XCode, GraphQL"
+    }
+  ]
+
+  const hoverEvent = (i) => {
+  }
+
   return (
     <div className="About">
-      <div className="about-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. </p>
-        <p>Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. </p>
-      </div>
+      <Timeline events={events} colors={colors} hoverEvent={hoverEvent} />
     </div>
   )
 }

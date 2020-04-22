@@ -252,7 +252,7 @@
 }
 
 .info:after {
-  content: 'Everything on this site was made from scratch!';
+  content: 'Everything on this site was made from scratch';
   position: absolute;
   display: flex;
   align-items: center;

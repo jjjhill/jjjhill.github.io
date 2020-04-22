@@ -6,7 +6,8 @@
   top: 20vh;
   bottom: 20vh;
   background-color: var(--dark-gray);
-  box-shadow: 0 0 0 100vmax rgba(0,0,0,.7);
+  box-shadow: 20px 10px 6px -6px #000,
+    0 0 0 100vmax rgba(0,0,0,.7);
 }
 
 .blurb {

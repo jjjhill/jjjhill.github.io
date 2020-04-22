@@ -1,0 +1,109 @@
+.Timeline {
+  font-family: sans-serif;
+  border-bottom: solid 1px white;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.major {
+  flex: 1;
+  height: 20px;
+  border-right: solid 1px white;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  position: relative;
+}
+
+.major:first-child {
+  border-left: solid 1px white;
+}
+
+.major > .minor {
+  flex: 1;
+  height: 10px;
+}
+
+.major > .minor:first-child {
+  border-right: solid 1px white;
+}
+
+.major > .minor:nth-child(3) {
+  border-left: solid 1px white;
+}
+
+.year {
+  position: absolute;
+  bottom: -5px;
+  transform: translateY(100%);
+  color: white;
+  font-size: 11px;
+}
+
+.event {
+  position: absolute;
+  border-top: solid 5px;
+  top: -15px;
+  bottom: 0;
+  transform-origin: top;
+  transition: background-color 200ms ease;
+}
+
+.popup {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: -4px;
+  height: 150px;
+  background-color: rgba(22, 22, 22, 0.4);
+  transform: translateY(-120%);
+  opacity: 1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrow {
+  position: absolute;
+  top: -24px;
+  border: solid 15px transparent;
+  border-top-color: rgba(22, 22, 22, 0.4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.popup h1 {
+  color: white;
+  font-family: "UbuntuMedium";
+  font-size: 24px;
+  line-height: 28px;
+  margin: 5px;
+  text-align: center;
+}
+
+.summary {
+  color: white;
+  font-family: "UbuntuLight";
+  margin: 5px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.technologies {
+  color: white;
+  font-family: "UbuntuLightItalic";
+  margin: 5px;
+  font-size: 13px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.line {
+  height: 2px;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 2px;
+}
