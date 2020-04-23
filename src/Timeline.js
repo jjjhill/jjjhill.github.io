@@ -51,8 +51,33 @@ export default function Timeline(props) {
     let totalMonths = numYears * 12
     let leftPct = (startN / totalMonths) * 100
     let rightPct = ((totalMonths - endN) / totalMonths) * 100
-    let clr = colors[i % colors.length]
+    let clr
 
+    if (event.isBackgroundEvent) {
+      clr = "#FFFFFF"
+      let { r, g, b } = hexToRgb(clr)
+      return (
+        <div
+          key={event.title}
+          className="event background-event"
+          style={{
+            left: leftPct + "%",
+            right: rightPct + "%",
+            borderColor: `rgb(${r}, ${g}, ${b})`,
+            backgroundColor: `rgba(${r}, ${g}, ${b}, 0.1)`
+          }}
+        >
+          <p style={{
+            fontSize: props.small ? '11px' : '15px',
+            transform: props.small ? 'translateY(-140%)' : 'translateY(-130%)'
+          }}>
+            {event.title}
+          </p>
+        </div>
+      )
+    }
+
+    clr = colors[i % colors.length]
     let { r, g, b } = hexToRgb(clr)
 
     return (
@@ -63,10 +88,8 @@ export default function Timeline(props) {
           left: leftPct + "%",
           right: rightPct + "%",
           borderColor: `rgb(${r},${g},${b})`,
-          backgroundColor:
-            hoveredIdx === i ? `rgba(${r},${g},${b},0.6)` : "transparent"
+          backgroundColor: hoveredIdx === i ? `rgba(${r},${g},${b},0.6)` : "transparent"
         }}
-        color={clr}
         onMouseEnter={() => eventHover(i)}
       >
         {hoveredIdx === i && (
@@ -77,27 +100,41 @@ export default function Timeline(props) {
   })
 
   let majorSegments = numYears
-  let w = "500px"
+  let w = "90%"
 
   return (
-    <div className="Timeline" style={{ width: w }} onMouseLeave={unHover}>
-      {[...Array(majorSegments)].map((_, i) => (
-        <div key={"seg" + i} className="major">
-          {[...Array(3)].map((_, j) => (
-            <div key={"subSeg" + j} className="minor" />
-          ))}
-          <span className="year">{firstYear + i}</span>
-        </div>
-      ))}
-      {eventLines}
-      {hoveredIdx !== -1 &&
-        (<div className="popup">
+    <div className="timeline-container" style={{
+      width: w,
+      height: props.small ? '210px' : '250px',
+      margin: props.small ? 'auto' : '0'
+    }} onMouseLeave={unHover}>
+      <div className="timeline">
+        {[...Array(majorSegments)].map((_, i) => (
+          <div key={"seg" + i} className="major">
+            {[...Array(3)].map((_, j) => (
+              <div key={"subSeg" + j} className="minor" />
+            ))}
+            <span className="year">{firstYear + i}</span>
+          </div>
+        ))}
+        {eventLines}
+        {hoveredIdx !== -1 &&
+          (<div className="popup" style={{
+            height: props.small ? '110px' : '150px',
+            transform: props.small ? 'translateY(-153%)' : 'translateY(-140%)' }}>
             <div className="line" style={{ backgroundColor: colors[hoveredIdx % colors.length] }} />
-          <h1>{events[hoveredIdx].title}</h1>
-          <p className="summary">{events[hoveredIdx].summary}</p>
-          <p className="technologies">{events[hoveredIdx].technologies}</p>
-        </div>
-      )}
+            <h1 style={{ fontSize: props.small ? '16px' : '24px', margin: props.small ? '2px' : '7px' }}>{events[hoveredIdx].title}</h1>
+            <p className="summary" style={{ fontSize: props.small ? '14px' : '19px' }}>{events[hoveredIdx].summary}</p>
+            <p className="technologies" style={{ fontSize: props.small ? '10px' : '13px' }}>{events[hoveredIdx].technologies}</p>
+          </div>
+        )}
+        {hoveredIdx === -1 &&
+          (<div className="my-timeline" style={{ top: props.small ? '-150px' : '-200px' }}>
+            <h1 style={{ fontSize: props.small ? 24 : 36 }}>Timeline</h1>
+            <p style={{ fontSize: props.small ? 12 : 20 }}>Hover or tap on the time periods below to learn more.</p>
+          </div>
+        )}
+      </div>
     </div>
   )
 }

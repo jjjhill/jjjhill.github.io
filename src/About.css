@@ -1,21 +1,72 @@
 .About {
-  flex: 1;
   height: 100vh;
   align-self: flex-start;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
 }
 
-p {
-  font-family: sans-serif;
-  font-size: 36px;
+.about-text {
+  width: 800px;
+}
+
+.about-text h1 {
   color: white;
+  font-family: "UbuntuMedium";
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.about-text p {
+  font-family: "UbuntuLight";
+  font-size: 24px;
+  color: white;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 771px) {
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+  }
 }
 
 @media (max-width: 770px) {
   .About {
+    margin-left: 0rem;
+    padding-right: 0rem;
+    position: absolute;
+    top:0;
+    padding-top: 40vh;
+    width: 100vw;
+    height: 100%;
+    display: flex;
     padding-bottom: 3.5rem;
     box-sizing: border-box;
+  }
+
+  .about-text {
+    width: 90%;
+    margin: auto;
+  }
+
+  .about-text h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .about-content {
+    overflow-y: scroll;
   }
 }

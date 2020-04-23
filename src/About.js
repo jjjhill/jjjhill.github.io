@@ -1,6 +1,7 @@
 import React from 'react'
 import './About.css'
 import Timeline from './Timeline'
+import useWindowDimensions from './useWindowDimensions'
 
 function About() {
   let colors = ["#f24f4f", "#ffff32", "#f79825", "#7cf4e6", "#ffa48e"]
@@ -49,15 +50,33 @@ function About() {
       endYear: 2019,
       endMonth: 12,
       technologies: "iOS, Swift, XCode, GraphQL"
-    }
+    },
+    {
+      title: "University of Waterloo",
+      summary: "Computer Engineering",
+      startYear: 2015,
+      startMonth: 8,
+      endYear: 2020,
+      endMonth: 4,
+      technologies: "",
+      isBackgroundEvent: true
+    },
   ]
-
+  const { width } = useWindowDimensions()
   const hoverEvent = (i) => {
   }
 
   return (
     <div className="About">
-      <Timeline events={events} colors={colors} hoverEvent={hoverEvent} />
+      <div className="about-content">
+        <div className="about-text">
+          <h1>About me</h1>
+          <p>I am a fresh graduate from the University of Waterloo's Computer Engineering program. My passion and experience is in full-stack web development.</p>
+          <p>Working with many different technology stacks and codebases I have proven that I can quickly become an efficient individual contributor on a new team.</p>
+          <p>Well-organised person, problem solver, passionate employee with high attention to detail. Hobbies include rock climbing, playing video games, listening to Metalcore music, and discovering the worlds best craft beers.</p>
+        </div>
+        <Timeline events={events} colors={colors} hoverEvent={hoverEvent} small={ width < 770 } />
+      </div>
     </div>
   )
 }
