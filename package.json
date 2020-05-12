@@ -8,10 +8,10 @@
     "@material-ui/icons": "^4.9.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "react-static-timeline": "^1.0.6"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

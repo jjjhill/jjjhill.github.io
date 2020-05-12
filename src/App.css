@@ -43,6 +43,14 @@
   .App:after {
     background-image: url('../images/rock_wall_cropped_mobile_compressed.png');
   }
+
+  .darken {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.2)
+    ), url('../images/rock_wall_cropped_mobile_compressed.png');
+    background-size: cover;
+  }
 }
 
 @font-face {

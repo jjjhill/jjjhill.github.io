@@ -22,8 +22,8 @@ function Home() {
 	        <div className="Letter"><span>O</span></div>
 	      </div>
 	      <div className="socials">
-	        <a href="https://www.linkedin.com/in/josh-hill1/"><img src={linkedInLogo}/></a>
-	        <a href="https://github.com/jjjhill"><img src={githubLogo}/></a>
+	        <a href="https://www.linkedin.com/in/josh-hill1/" target="_blank"><img src={linkedInLogo} alt={'linkedIn'}/></a>
+	        <a href="https://github.com/jjjhill" target="_blank"><img src={githubLogo} alt={'github'}/></a>
 	      </div>
 	    </div>
       <div className="info">i</div>

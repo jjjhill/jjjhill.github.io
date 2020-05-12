@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       <NavBar onSelect={pageSelect} selectedPage={page} routes={routes} />
-      <div className="App">
+      <div className={`App${(page === 'about') ? ' darken' : ''}`}>
         { page === 'home' && <Home /> }
         { page === 'about' && <About /> }
         { page === 'skills' && <Skills /> }
