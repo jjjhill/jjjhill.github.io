@@ -29,6 +29,35 @@
   z-index: -2;
 }
 
+#checkmark {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%) scale(0);
+  height: 100px;
+  width: 100px;
+  z-index: 100;
+}
+
+.onSuccess {
+  animation: flashInOut 750ms ease;
+}
+
+@keyframes flashInOut {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
 @media (max-width: 770px) {
   .App {
     flex-direction: column;

@@ -39,7 +39,7 @@ function About() {
     },
     {
       title: "Vida Health",
-      summary: "Developed client-facing features for our iOS application while being a strong presence in agile development and product ownership",
+      summary: "Developed client-facing features for our iOS application while working closely with product and design on driving user engagement",
       start: { year: 2019, month: 8 },
       end: { year: 2019, month: 12 },
       technologies: "iOS, Swift, XCode, GraphQL",
@@ -79,7 +79,7 @@ function About() {
         <div className="about-text">
           <h1>About me</h1>
           <div>
-            <p>I am a fresh grad from the University of Waterloo's Computer Engineering program. My passion and experience is in full-stack web development.</p>
+            <p>I am a new grad from the University of Waterloo's Computer Engineering program. My passion and experience is in full-stack web development.</p>
             <p>Working with many different technology stacks and codebases, I have proven that I can quickly become an efficient individual contributor on a new team.</p>
             <p>Well-organized person, problem solver, passionate employee with high attention to detail. Hobbies include rock climbing, playing video games, listening to Metalcore music, and discovering the world's best craft beers.</p>
           </div>

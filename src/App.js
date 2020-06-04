@@ -6,18 +6,28 @@ import About from './About.js'
 import Skills from './Skills.js'
 import Contact from './Contact.js'
 import useComponentVisible from './useComponentVisible.js'
+import checkmark from '../images/check.png'
 
 function App() {
-  let routes = ['home', 'about', 'skills', 'contact']
+  const routes = ['home', 'about', 'skills', 'contact']
+  const [formSuccess, setFormSuccess] = useState(false)
   const [page, setPage] = useState('about')
   const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
-  let pageSelect = (pageName) => {
+  const pageSelect = (pageName) => {
     if (pageName === 'contact') {
       setIsComponentVisible(!isComponentVisible)
       return
     }
     setPage(pageName)
+  }
+
+  const formSubmitted = () => {
+    setFormSuccess(true)
+    setTimeout(() => {
+      setIsComponentVisible(false)
+      setFormSuccess(false)
+    }, 750)
   }
 
   return (
@@ -27,7 +37,13 @@ function App() {
         { page === 'home' && <Home /> }
         { page === 'about' && <About /> }
         { page === 'skills' && <Skills /> }
-        { isComponentVisible && <Contact ref={ref}/> }
+        { isComponentVisible &&
+          <Contact
+            ref={ref}
+            formSubmitted={formSubmitted}
+          />
+        }
+        <img src={checkmark} id='checkmark' className={formSuccess ? 'onSuccess' : ''} />
       </div>
     </div>
   )

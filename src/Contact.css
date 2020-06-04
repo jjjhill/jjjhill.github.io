@@ -1,17 +1,40 @@
 .Contact {
-  z-index: 2;
+  z-index: 20;
   position: absolute;
-  left: 20vw;
-  right: 20vw;
-  top: 20vh;
-  bottom: 20vh;
+  left: 50vw;
+  top: 50vh;
+  height: min(70vh, 600px);
+  width: min(500px, 90vw);
   background-color: var(--dark-gray);
-  box-shadow: 20px 10px 6px -6px #000,
+  box-shadow: 20px 10px 9px -9px #000,
     0 0 0 100vmax rgba(0,0,0,.7);
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  font-family: "UbuntuLight";
 }
 
-.blurb {
-  
+#contact-me {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 2px;
+  color: var(--primary-color);
+  font-family: "UbuntuBold";
+  font-size: 32px;
+}
+
+#my-email {
+  font-family: "UbuntuLight";
+  font-size: 15px;
+  color: white;
+  margin-left: 20px;
+  filter: brightness(0.5);
+}
+
+#blurb {
+  margin: 20px;
+  color: white;
+  font-size: 18px;
 }
 
 .inputs {
@@ -22,7 +45,70 @@
     'message message';
 
   grid-template-rows: 1fr 1fr 5fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
+  flex: 1;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+input[type="submit"] {
+  width: 60px;
+  align-self: flex-end;
+  border-radius: 2px;
+  border-color: var(--primary-color);
+  border-width: 1px;
+  color: var(--primary-color);
+  background-color: var(--dark-gray);
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+}
+
+input[type="submit"]:hover {
+  align-self: flex-end;
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--dark-gray);
+  border-width: 1px;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  background-color: var(--medium-gray);
+  color: #AAA;
+  font-family: "UbuntuLight";
+  font-size: 18px;
+  border: 1px black solid;
+  padding: 5px;
+}
+
+input:focus,
+textarea:focus {   
+  border-color: rgba(3, 99, 85, 1);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(3, 99, 85, 0.8);
+  outline: 0 none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px var(--medium-gray) inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #AAA;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 50px var(--medium-gray) inset;/*your box-shadow*/
+  -webkit-text-fill-color: #AAA;
+}
+
+::placeholder {
+  font-family: "UbuntuLight";
+  font-size: 18px;
+  color: #AAA;
 }
 
 @media (max-width: 770px) {
@@ -35,6 +121,12 @@
 
     grid-template-rows: 1fr 1fr 1fr 5fr;
     grid-template-columns: 1fr;
+    flex: 1;
+  }
+
+  .Contact {
+    box-shadow: 20px 10px 9px -9px #000,
+      0 0 0 100vmax rgba(0,0,0,.9);
   }
 }
 
@@ -47,6 +139,6 @@
 .inputs > input:nth-child(3) {
   grid-area: subject;
 }
-.inputs > input:nth-child(4) {
+.inputs > textarea {
   grid-area: message;
 }
