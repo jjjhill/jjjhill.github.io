@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.f739b7ad.css",
-  "main.css.map": "static/css/main.f739b7ad.css.map",
-  "main.js": "static/js/main.d6dc3eae.js",
-  "main.js.map": "static/js/main.d6dc3eae.js.map",
+  "main.css": "static/css/main.ecbe6c1a.css",
+  "main.css.map": "static/css/main.ecbe6c1a.css.map",
+  "main.js": "static/js/main.33e35410.js",
+  "main.js.map": "static/js/main.33e35410.js.map",
   "static/media/ArchivoNarrow-Medium.ttf": "static/media/ArchivoNarrow-Medium.27c63ed5.ttf",
   "static/media/Ubuntu-Bold.ttf": "static/media/Ubuntu-Bold.e00e2a77.ttf",
   "static/media/Ubuntu-Light.ttf": "static/media/Ubuntu-Light.277289c5.ttf",
@@ -19,6 +19,6 @@
   "static/media/js.png": "static/media/js.a935cbd9.png",
   "static/media/node.png": "static/media/node.85458a67.png",
   "static/media/react.png": "static/media/react.4ddd3f4d.png",
-  "static/media/rock_wall_cropped_compressed.png": "static/media/rock_wall_cropped_compressed.64d2b7ba.png",
+  "static/media/rock_wall_cropped_compressed.png": "static/media/rock_wall_cropped_compressed.877db989.png",
   "static/media/rock_wall_cropped_mobile_compressed.png": "static/media/rock_wall_cropped_mobile_compressed.bac87027.png"
 }

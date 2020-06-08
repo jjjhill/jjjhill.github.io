@@ -39,7 +39,7 @@
   position: relative;
 }
 
-.JoshHill {
+#JoshHill {
   --stagger-delay: 150ms;
   --letter-size: 9rem;
   --gap-size: 0.3rem;
@@ -80,7 +80,7 @@
   animation-delay: 2.3s;
 }
 
-.socials {
+#socials {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -97,7 +97,7 @@
   animation-delay: 2.3s;
 }
 
-.socials > a {
+#socials > a {
   height: 40px;
   width: 40px;
   margin-left: 20px;
@@ -105,18 +105,15 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.socials img {
+#socials img {
   height: 40px;
   width: 40px;
   transform: scale(1);
   transition: transform 100ms ease;
 }
 
-.socials img:active {
-  height: 40px;
-  width: 40px;
-  transform: scale(0.8);
-  transition: transform 100ms ease;
+#socials a:hover {
+  transform: scale(1.1);
 }
 
 @media (max-width: 770px) {
@@ -136,7 +133,7 @@
     font-size: 1.5rem;
   }
 
-  .JoshHill {
+  #JoshHill {
     --letter-size: 6rem;
     --translate-H: 1.8rem;
     --translate-I: 1rem;
@@ -159,80 +156,80 @@
   cursor: default;
 }
 
-.JoshHill > .Letter:nth-child(1) {
+#JoshHill > .Letter:nth-child(1) {
   grid-area: a;
   animation: permNameEntranceTop 2s ease-out;
   animation-delay: calc(1 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(2) {
+#JoshHill > .Letter:nth-child(2) {
   grid-area: b;
   animation: permNameEntranceTop 2s ease-out;
   animation-delay: calc(2 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(3) {
+#JoshHill > .Letter:nth-child(3) {
   grid-area: c;
   animation: permNameEntranceTop 2s ease-out;
   animation-delay: calc(3 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(4) {
+#JoshHill > .Letter:nth-child(4) {
   grid-area: d;
   animation: permNameEntranceTop 2s ease-out;
   animation-delay: calc(4 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(5) {
+#JoshHill > .Letter:nth-child(5) {
   grid-area: e;
   animation: tempNameEntrance 2s ease-out;
   animation-delay: calc(5 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(6) {
+#JoshHill > .Letter:nth-child(6) {
   grid-area: f;
   animation: tempNameEntrance 2s ease-out;
   animation-delay: calc(6 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(7) {
+#JoshHill > .Letter:nth-child(7) {
   grid-area: g;
   animation: permNameEntranceBottomL2 2s ease-out;
   animation-delay: calc(7 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(8) {
+#JoshHill > .Letter:nth-child(8) {
   grid-area: h;
   animation: permNameEntranceBottomL 2s ease-out;
   animation-delay: calc(6 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(9) {
+#JoshHill > .Letter:nth-child(9) {
   grid-area: i;
   animation: permNameEntranceBottomI 2s ease-out;
   animation-delay: calc(5 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(10) {
+#JoshHill > .Letter:nth-child(10) {
   grid-area: j;
   animation: permNameEntranceBottomH 2s ease-out;
   animation-delay: calc(4 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(11) {
+#JoshHill > .Letter:nth-child(11) {
   grid-area: k;
   animation: tempNameEntrance 2s ease-out;
   animation-delay: calc(3 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
-.JoshHill > .Letter:nth-child(12) {
+#JoshHill > .Letter:nth-child(12) {
   grid-area: l;
   animation: tempNameEntrance 2s ease-out;
   animation-delay: calc(2 * var(--stagger-delay));
   animation-fill-mode: forwards;
 }
 
-.info {
+#info {
   --tooltip-scale: 0;
   position: absolute;
   top: 0;

@@ -11,12 +11,12 @@ import checkmark from '../images/check.png'
 function App() {
   const routes = ['home', 'about', 'skills', 'contact']
   const [formSuccess, setFormSuccess] = useState(false)
-  const [page, setPage] = useState('about')
+  const [page, setPage] = useState('home')
   const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
 
   const pageSelect = (pageName) => {
     if (pageName === 'contact') {
-      setIsComponentVisible(!isComponentVisible)
+      setIsComponentVisible(true)
       return
     }
     setPage(pageName)
@@ -33,7 +33,7 @@ function App() {
   return (
     <div>
       <NavBar onSelect={pageSelect} selectedPage={page} routes={routes} />
-      <div className={`App${(page === 'about') ? ' darken' : ''}`}>
+      <div id="App" className={page === 'about' ? 'darken' : ''}>
         { page === 'home' && <Home /> }
         { page === 'about' && <About /> }
         { page === 'skills' && <Skills /> }

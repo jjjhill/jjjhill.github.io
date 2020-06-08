@@ -4,7 +4,7 @@
   --dark-gray: #222;
 }
 
-.App {
+#App {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 
-.App:after {
+#App:after {
   content: '';
   background-image: url('../images/rock_wall_cropped_compressed.png');
   position: absolute;
@@ -59,7 +59,7 @@
 }
 
 @media (max-width: 770px) {
-  .App {
+  #App {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
@@ -69,7 +69,7 @@
     height: -webkit-fill-available;
   }
 
-  .App:after {
+  #App:after {
     background-image: url('../images/rock_wall_cropped_mobile_compressed.png');
   }
 
