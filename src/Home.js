@@ -30,7 +30,7 @@ function Home() {
           </a>
         </div>
       </div>
-      <div id="info">i</div>
+      <div className="info">i</div>
     </div>
   )
 }
