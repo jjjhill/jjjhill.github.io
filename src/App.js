@@ -44,6 +44,7 @@ function App() {
           />
         }
         <img src={checkmark} id='checkmark' className={formSuccess ? 'onSuccess' : ''} />
+        <div id="info">i</div>
       </div>
     </div>
   )

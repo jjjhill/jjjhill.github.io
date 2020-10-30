@@ -30,7 +30,6 @@ function Home() {
           </a>
         </div>
       </div>
-      <div className="info">i</div>
     </div>
   )
 }

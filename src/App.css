@@ -63,10 +63,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    padding-bottom: 3.5rem;
     padding-left: 0px;
-    height: 100vh;
-    height: -webkit-fill-available;
+    padding-bottom: 3.5rem;
+    
+    height: calc(var(--vh, 1vh) * 100);
   }
 
   #App:after {
@@ -75,11 +75,66 @@
 
   .darken {
     background: linear-gradient(
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.2)
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.3)
     ), url('../images/rock_wall_cropped_mobile_compressed.png');
     background-size: cover;
   }
+}
+
+#info {
+  --tooltip-scale: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: "UbuntuBold";
+  font-size: 1.5rem;
+  color: white;
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  cursor: default;
+}
+
+#info:after {
+  content: 'Everything on this site was made from scratch';
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%) scale(var(--tooltip-scale));
+  height: 50px;
+  width: 150px;
+  background-color: var(--dark-gray);
+  color: white;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  transform-origin: right;
+  transition: transform 200ms ease;
+}
+
+#info:before {
+  content: '';
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%) scale(var(--tooltip-scale));
+  z-index: 5;
+  border: 15px solid transparent;
+  border-left-color: var(--dark-gray);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+#info:hover {
+  --tooltip-scale: 1;
 }
 
 @font-face {
