@@ -9,7 +9,7 @@ import Contact from './Contact.js'
 import useComponentVisible from './useComponentVisible.js'
 import checkmark from '../images/check.png'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
@@ -37,12 +37,9 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename='/'>
       <Switch>
-        <Route path="/bouldering">
-          <BoulderingForm />
-        </Route>
-        <Route path="/">
+        <Route exact path="/">
           <div>
             <NavBar onSelect={pageSelect} selectedPage={page} routes={routes} />
             <div id="App" className={page === 'about' ? 'darken' : ''}>
@@ -59,6 +56,9 @@ function App() {
               <div id="info">i</div>
             </div>
           </div>
+        </Route>
+        <Route path="/bouldering">
+          <BoulderingForm />
         </Route>
       </Switch>
     </Router>
