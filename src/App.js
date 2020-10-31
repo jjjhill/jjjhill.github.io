@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'
+import BoulderingForm from './BoulderingForm.js'
 import NavBar from './NavBar.js'
 import Home from './Home.js'
 import About from './About.js'
@@ -7,6 +8,11 @@ import Skills from './Skills.js'
 import Contact from './Contact.js'
 import useComponentVisible from './useComponentVisible.js'
 import checkmark from '../images/check.png'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 function App() {
   const routes = ['home', 'about', 'skills', 'contact']
@@ -31,22 +37,31 @@ function App() {
   }
 
   return (
-    <div>
-      <NavBar onSelect={pageSelect} selectedPage={page} routes={routes} />
-      <div id="App" className={page === 'about' ? 'darken' : ''}>
-        { page === 'home' && <Home /> }
-        { page === 'about' && <About /> }
-        { page === 'skills' && <Skills /> }
-        { isComponentVisible &&
-          <Contact
-            ref={ref}
-            formSubmitted={formSubmitted}
-          />
-        }
-        <img src={checkmark} id='checkmark' className={formSuccess ? 'onSuccess' : ''} />
-        <div id="info">i</div>
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/bouldering">
+          <BoulderingForm />
+        </Route>
+        <Route path="/">
+          <div>
+            <NavBar onSelect={pageSelect} selectedPage={page} routes={routes} />
+            <div id="App" className={page === 'about' ? 'darken' : ''}>
+              { page === 'home' && <Home /> }
+              { page === 'about' && <About /> }
+              { page === 'skills' && <Skills /> }
+              { isComponentVisible &&
+                <Contact
+                  ref={ref}
+                  formSubmitted={formSubmitted}
+                />
+              }
+              <img src={checkmark} id='checkmark' className={formSuccess ? 'onSuccess' : ''} />
+              <div id="info">i</div>
+            </div>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 
