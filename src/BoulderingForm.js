@@ -13,7 +13,7 @@ function BoulderingForm() {
       alert('phone number not valid')
       return
     }
-    axios.post("https://cors-anywhere.herokuapp.com/http://ec2-18-216-159-135.us-east-2.compute.amazonaws.com:3000/webhooks/inbound-message", {date: date.toString(), phone})
+    axios.post("https://cors-anywhere.herokuapp.com/3.136.177.132:3000/webhooks/inbound-message", {date: date.toString(), phone})
     .then(function (response) {
       console.log(response);
     })
@@ -31,7 +31,7 @@ function BoulderingForm() {
       </div>
       <div>
         <label>Phone number: </label>
-        <input id="phone" onChange={num => setPhone(num.target.value)}></input>
+        <input id="phone" onChange={e => setPhone(e.target.value)}></input>
       </div>
       <button onClick={submit}>
         Submit
