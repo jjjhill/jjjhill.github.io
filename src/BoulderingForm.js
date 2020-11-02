@@ -8,12 +8,14 @@ function BoulderingForm() {
   const [date, setDate] = useState(new Date());
   const [phone, setPhone] = useState('');
   const submit = () => {
+    const month = date.getMonth()
+    const day = date.getDate()
     var phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     if (!phone.match(phoneRegex)) {
       alert('phone number not valid')
       return
     }
-    axios.post("https://cors-anywhere.herokuapp.com/3.136.177.132:3000/webhooks/inbound-message", {date: date.toString(), phone})
+    axios.post("https://cors-anywhere.herokuapp.com/3.136.177.132:3000/webhooks/inbound-message", {month, day, phone})
     .then(function (response) {
       console.log(response);
     })
