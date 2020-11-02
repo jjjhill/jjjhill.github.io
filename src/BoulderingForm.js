@@ -6,15 +6,17 @@ import axios from 'axios'
 
 function BoulderingForm() {
   const [date, setDate] = useState(new Date());
-  const [phone, setPhone] = useState('');
+  const [phoneNum, setPhoneNum] = useState('');
   const submit = () => {
     const month = date.getMonth()
     const day = date.getDate()
     var phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-    if (!phone.match(phoneRegex)) {
+    if (!phoneNum.match(phoneRegex)) {
       alert('phone number not valid')
       return
     }
+    let phone = phoneNum.replace(/\D+/g, "");
+    phone = phone.length === 11 ? phone.slice(1,11) : phone
     axios.post("https://cors-anywhere.herokuapp.com/3.136.177.132:3000/webhooks/inbound-message", {month, day, phone})
     .then(function (response) {
       console.log(response);
@@ -33,7 +35,7 @@ function BoulderingForm() {
       </div>
       <div>
         <label>Phone number: </label>
-        <input id="phone" onChange={e => setPhone(e.target.value)}></input>
+        <input id="phone" onChange={e => setPhoneNum(e.target.value)}></input>
       </div>
       <button onClick={submit}>
         Submit
